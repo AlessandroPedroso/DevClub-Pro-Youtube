@@ -1,0 +1,19 @@
+{
+  "name": "blog-api-fastify",
+  "version": "1.0.0",
+  "description": "First API with Fastify.",
+  "main": "src/server.js",
+  "type": "module",
+  "author": {
+    "name": "Alessandro Schuquel Pedroso",
+    "email": "alessandropedrosoti@gmail.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "dev": "node --watch ."
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "pino-pretty": "^11.2.2"
+  }
+}

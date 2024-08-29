@@ -1,0 +1,3 @@
+nabled:true  - habilita o formato no js
+"arrowParentheses": "always" - habilita sempre o parametro na funcao
+"quoteStyle":"single" - aspas simples

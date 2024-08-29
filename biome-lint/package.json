@@ -1,0 +1,23 @@
+{
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"tsx": "^4.19.0",
+		"typescipt": "^1.0.0",
+		"typescript": "^5.5.4"
+	},
+	"name": "biome-lint",
+	"version": "1.0.0",
+	"main": "./src/index.ts",
+	"dependencies": {
+		"esbuild": "^0.23.1",
+		"get-tsconfig": "^4.8.0",
+		"resolve-pkg-maps": "^1.0.0"
+	},
+	"scripts": {
+		"start": "tsx ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}
