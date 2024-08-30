@@ -12,5 +12,5 @@
 - Nome do Usuário
 - Conteúdo
 
-[] Usuário deve poder dar like em um post
+[X] Usuário deve poder dar like em um post
 [] Usuário deve poder excluir um post

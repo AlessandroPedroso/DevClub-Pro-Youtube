@@ -49,8 +49,7 @@ export async function postsRoutes(app) {
   });
 
   app.patch("/posts/:id/like", { onRequest: [isAuth] }, (request, reply) => {
-    
-      const { id } = request.params;
+    const { id } = request.params;
 
     // + - transforma a string em number kkkkk
     const postIndex = posts.findIndex((post) => post.id === +id);
@@ -69,10 +68,33 @@ export async function postsRoutes(app) {
       posts[postIndex].likes.splice(likeIndex, 1);
 
       return reply.status(200).send(posts[postIndex]);
-      }
-      
-      posts[postIndex].likes.push(username)
+    }
+
+    posts[postIndex].likes.push(username);
 
     return reply.status(200).send(posts[postIndex]);
+  });
+
+  app.delete("/posts/:id", { onRequest: [isAuth] }, (request, reply) => {
+    const { id } = request.params;
+
+    // + - transforma a string em number kkkkk
+    const postIndex = posts.findIndex((post) => post.id === +id);
+
+    if (postIndex === -1) {
+      return reply.status(404).send({ message: "Post not found" });
+      }
+      
+      //normalmente é feito pelo token
+      const { username } = request.body
+      
+      if (username !== posts[postIndex].owner) {
+
+          return reply.status(400).send({message:'User is not the post owner'})
+      }
+
+    posts.splice(postIndex,1);
+
+    return reply.status(204).send();
   });
 }
